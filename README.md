@@ -35,6 +35,9 @@ Once the plugin is activated, you can access the following options from the sett
 
 ## Changelog
 
+### v1.1
+- Added automatic update checks and improved translations.
+
 ### v1.0
 - Initial release of the plugin.
 

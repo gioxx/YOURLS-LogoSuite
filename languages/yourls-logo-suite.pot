@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.2\n"
+"Project-Id-Version: YOURLS Logo Suite 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/gioxx/YOURLS-LogoSuite/issues\n"
 "POT-Creation-Date: 2025-05-25\n"
 "Language: \n"
