@@ -3,12 +3,18 @@
 Plugin Name: YOURLS Logo Suite
 Plugin URI: https://github.com/gioxx/YOURLS-LogoSuite
 Description: Customize the YOURLS admin logo and page title from one plugin.
-Version: 1.0
+Version: 1.1
 Author: Gioxx
 Author URI: https://gioxx.org
+Text Domain: yourls-logo-suite
+Domain Path: /languages
 */
 
 if ( !defined( 'YOURLS_ABSPATH' ) ) die();
+
+define('LOGO_SUITE_VERSION', '1.1');
+define('LOGO_SUITE_GITHUB_API', 'https://api.github.com/repos/gioxx/YOURLS-LogoSuite/releases/latest');
+define('LOGO_SUITE_GITHUB_URL', 'https://github.com/gioxx/YOURLS-LogoSuite/releases/latest');
 
 // Load plugin translation files
 yourls_add_action( 'plugins_loaded', 'logo_suite_load_textdomain' );
@@ -94,6 +100,12 @@ function logo_suite_config_page() {
             width: 20px;
             height: 20px;
         }
+        input[type="submit"].button {
+            padding: 10px 18px;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>';
 
     echo '<h2 class="plugin-title">' . yourls__('YOURLS Logo Suite', 'yourls-logo-suite') . '</h2>';
@@ -113,16 +125,26 @@ function logo_suite_config_page() {
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
         <path d="M3 9h18" stroke="currentColor" stroke-width="2"/>
     </svg> ' . yourls__('Logo Settings', 'yourls-logo-suite') . '</h3>';
-    echo '<div class="form-row"><label>' . yourls__('Image URL', 'yourls-logo-suite') . '</label>';
-    echo '<input type="text" name="logo_suite_image_url" value="' . yourls_esc_attr($logo_url) . '" placeholder="https://example.com/logo.png" />';
+    echo '<div class="form-row"><label for="logo_suite_image_url">' . yourls__('Image URL', 'yourls-logo-suite') . '</label>';
+    echo '<input type="text" name="logo_suite_image_url" id="logo_suite_image_url" value="' . yourls_esc_attr($logo_url) . '" placeholder="https://example.com/logo.png" oninput="updateLogoPreview()" />';
     echo '<small>' . yourls__('Example: a direct link to your logo image (PNG, JPG, SVG).', 'yourls-logo-suite') . '</small></div>';
 
-    echo '<div class="form-row"><label>' . yourls__('ALT Tag', 'yourls-logo-suite') . '</label>';
-    echo '<input type="text" name="logo_suite_image_alt" value="' . yourls_esc_attr($logo_alt) . '" placeholder="' . yourls__('My Custom Logo', 'yourls-logo-suite') . '" />';
+    // Logo preview
+    echo '<div id="logo-preview-wrapper" style="margin-top:10px; margin-bottom:18px;">';
+    if ($logo_url) {
+        echo '<img id="logo-preview" src="' . yourls_esc_url($logo_url) . '" alt="" style="max-height:60px;border:1px solid #ccc;padding:5px;background:#fff;" onerror="logoPreviewError()" onload="logoPreviewSuccess()" />';
+        echo '<div id="logo-preview-error" style="color:red;display:none;margin-top:8px;font-size:0.9em;">' . yourls__('Unable to load the image. Please check the URL.', 'yourls-logo-suite') . '</div>';
+    } else {
+        echo '<img id="logo-preview" src="" alt="" style="display:none;max-height:60px;border:1px solid #ccc;padding:5px;background:#fff;" />';
+    }
+    echo '</div>';
+
+    echo '<div class="form-row"><label for="logo_suite_image_alt">' . yourls__('ALT Tag', 'yourls-logo-suite') . '</label>';
+    echo '<input type="text" name="logo_suite_image_alt" id="logo_suite_image_alt" value="' . yourls_esc_attr($logo_alt) . '" placeholder="' . yourls__('My Custom Logo', 'yourls-logo-suite') . '" />';
     echo '<small>' . yourls__('Example: descriptive text for accessibility.', 'yourls-logo-suite') . '</small></div>';
 
-    echo '<div class="form-row"><label>' . yourls__('Title Attribute', 'yourls-logo-suite') . '</label>';
-    echo '<input type="text" name="logo_suite_image_title" value="' . yourls_esc_attr($logo_title) . '" placeholder="' . yourls__('Back to Dashboard', 'yourls-logo-suite') . '" />';
+    echo '<div class="form-row"><label for="logo_suite_image_title">' . yourls__('Title Attribute', 'yourls-logo-suite') . '</label>';
+    echo '<input type="text" name="logo_suite_image_title" id="logo_suite_image_title" value="' . yourls_esc_attr($logo_title) . '" placeholder="' . yourls__('Back to Dashboard', 'yourls-logo-suite') . '" />';
     echo '<small>' . yourls__('Example: tooltip text shown on hover.', 'yourls-logo-suite') . '</small></div>';
     echo '</div>';
 
@@ -132,12 +154,12 @@ function logo_suite_config_page() {
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" fill="none"/>
         <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" fill="none"/>
       </svg> ' . yourls__('Page Title Settings', 'yourls-logo-suite') . '</h3>';
-    echo '<div class="form-row"><label>' . yourls__('Custom Title', 'yourls-logo-suite') . '</label>';
-    echo '<input type="text" name="logo_suite_custom_title" value="' . yourls_esc_attr($custom_title) . '" placeholder="' . yourls__('My YOURLS Panel', 'yourls-logo-suite') . '" />';
+    echo '<div class="form-row"><label for="logo_suite_custom_title">' . yourls__('Custom Title', 'yourls-logo-suite') . '</label>';
+    echo '<input type="text" name="logo_suite_custom_title" id="logo_suite_custom_title" value="' . yourls_esc_attr($custom_title) . '" placeholder="' . yourls__('My YOURLS Panel', 'yourls-logo-suite') . '" />';
     echo '<small>' . yourls__('Example: your custom page title.', 'yourls-logo-suite') . '</small></div>';
 
     echo '<div class="form-row">';
-    echo '<label><input type="checkbox" name="logo_suite_keep_suffix" value="1" ' . $keep_suffix . ' /> ';
+    echo '<label for="logo_suite_keep_suffix"><input type="checkbox" name="logo_suite_keep_suffix" id="logo_suite_keep_suffix" value="1" ' . $keep_suffix . ' /> ';
     echo yourls__('Keep “(YOURLS)” after the custom title', 'yourls-logo-suite') . '</label>';
     echo '</div>';
     echo '</div>';
@@ -156,6 +178,41 @@ function logo_suite_config_page() {
     echo '<input type="submit" name="logo_suite_reset_settings" value="↩ ' . yourls__('Reset to Default', 'yourls-logo-suite') . '" class="button" onclick="return confirm(\'' . yourls__('Are you sure you want to reset all settings?', 'yourls-logo-suite') . '\');" formnovalidate />';
     echo '<input type="hidden" name="nonce_reset" value="' . $nonce_reset . '" />';
     echo '</div>';
+
+    echo '<div class="logo-suite-section" style="margin-top: 40px;">';
+    echo '<h3>Changelog (Latest Release)</h3>';
+    echo logo_suite_get_latest_changelog();
+    echo '</div>';
+
+    echo <<<JS
+    <script>
+    function updateLogoPreview() {
+        const input = document.getElementById('logo_suite_image_url');
+        const preview = document.getElementById('logo-preview');
+        const error = document.getElementById('logo-preview-error');
+
+        const url = input.value.trim();
+        if (url) {
+            preview.src = url;
+            preview.style.display = 'inline-block';
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
+            error.style.display = 'none';
+        }
+    }
+
+    function logoPreviewError() {
+        const error = document.getElementById('logo-preview-error');
+        error.style.display = 'block';
+    }
+
+    function logoPreviewSuccess() {
+        const error = document.getElementById('logo-preview-error');
+        error.style.display = 'none';
+    }
+    </script>
+    JS;
 
     echo '</form>';
 }
@@ -178,20 +235,36 @@ function logo_suite_reset_settings() {
     yourls_delete_option('logo_suite_keep_suffix');
 }
 
-// Override the admin logo
-yourls_add_filter( 'html_logo', 'logo_suite_custom_logo' );
-function logo_suite_custom_logo() {
-    $logo_url = yourls_get_option('logo_suite_image_url');
-    if ( !$logo_url )
-        return;
+// Inject <span style="display:none"> before the original logo (hides it)
+yourls_add_filter('pre_html_logo', 'logo_suite_hide_original_logo');
+function logo_suite_hide_original_logo() {
+    $custom_logo = yourls_get_option('logo_suite_image_url');
+    if ($custom_logo) {
+        echo '<span style="display:none">';
+    }
+}
 
-    $logo_url   = yourls_esc_url( $logo_url );
-    $alt        = yourls_esc_attr( yourls_get_option('logo_suite_image_alt') );
-    $title_attr = yourls_esc_attr( yourls_get_option('logo_suite_image_title') );
+// Inject </span> and custom logo
+yourls_add_filter('html_logo', 'logo_suite_custom_logo');
+function logo_suite_custom_logo() {
+    $custom_logo = yourls_get_option('logo_suite_image_url');
+    if (!$custom_logo) {
+        return; // It shows nothing if there is no custom logo
+    }
+
+    $alt        = yourls_esc_attr(yourls_get_option('logo_suite_image_alt'));
+    $title_attr = yourls_esc_attr(yourls_get_option('logo_suite_image_title'));
     $admin_url  = yourls_admin_url('index.php');
 
-    echo '<h1 id="yourls_logo"><a href="' . $admin_url . '" title="' . $title_attr . '">';
-    echo '<img src="' . $logo_url . '" alt="' . $alt . '" title="' . $title_attr . '" style="border: none; max-width: 100px;" />';
+    static $style_printed = false;
+    if (!$style_printed) {
+        echo '<style>#yourls_logo_custom img { max-height: 180px; width: auto; }</style>';
+        $style_printed = true;
+    }
+
+    echo '</span>';
+    echo '<h1 id="yourls_logo_custom"><a href="' . $admin_url . '" title="' . $title_attr . '">';
+    echo '<img src="' . yourls_esc_url($custom_logo) . '" alt="' . $alt . '" title="' . $title_attr . '" style="border: none;" />';
     echo '</a></h1>';
 }
 
@@ -205,4 +278,173 @@ function logo_suite_custom_title( $title ) {
     return yourls_get_option('logo_suite_keep_suffix') == 1
         ? $custom_title . ' (YOURLS)'
         : $custom_title;
+}
+
+// Check for updates and show notice if a new version is available
+yourls_add_action( 'plugins_loaded', 'logo_suite_update_check_setup' );
+function logo_suite_update_check_setup() {
+    // Hook notification in all admin pages
+    yourls_add_action( 'admin_notices', 'logo_suite_show_update_notice' );
+    // Hook badge in plugin page title
+    yourls_add_filter( 'plugin_page_title_logo_suite', 'logo_suite_page_title_with_badge' );
+}
+
+function logo_suite_show_update_notice() {
+    static $checked = false;
+    static $update_available = false;
+    static $latest_version = '';
+    static $release_url = '';
+
+    if ($checked) {
+        if ($update_available) {
+            echo '<div class="notice notice-info" style="margin:10px 0; padding:10px; border-left: 4px solid #0073aa;">';
+            echo '🆕 <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . $latest_version . '</strong>! ';
+            echo '<a href="' . $release_url . '" target="_blank">View details on GitHub</a>.';
+            echo '</div>';
+        }
+        return;
+    }
+
+    $checked = true;
+
+    $response = logo_suite_remote_get(LOGO_SUITE_GITHUB_API);
+
+    if (!$response || !isset($response['tag_name'])) return;
+
+    $latest_version = ltrim($response['tag_name'], 'v');
+
+    if ( version_compare($latest_version, LOGO_SUITE_VERSION, '>') ) {
+        $update_available = true;
+        $release_url = $response['html_url'];
+
+        echo '<div class="notice notice-info" style="margin:10px 0; padding:10px; border-left: 4px solid #0073aa;">';
+        echo '🆕 <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . $latest_version . '</strong>! ';
+        echo '<a href="' . $release_url . '" target="_blank">View details on GitHub</a>.';
+        echo '</div>';
+    }
+}
+
+function logo_suite_page_title_with_badge( $title ) {
+    // Show a small badge next to plugin title if update is available
+    static $update_available = null;
+    static $latest_version = '';
+
+    if ( $update_available === null ) {
+        $response = logo_suite_remote_get(LOGO_SUITE_GITHUB_API);
+        if ( !$response || !isset($response['tag_name']) ) {
+            $update_available = false;
+        } else {
+            $latest_version = ltrim($response['tag_name'], 'v');
+            $update_available = version_compare($latest_version, LOGO_SUITE_VERSION, '>');
+        }
+    }
+
+    if ( $update_available ) {
+        $badge = ' <span style="background:#0073aa;color:#fff;font-size:0.8em;padding:2px 6px;border-radius:3px;vertical-align:middle;">Update Available</span>';
+        return $title . $badge;
+    }
+
+    return $title;
+}
+
+function logo_suite_remote_get($url) {
+    $ch = curl_init();
+
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_USERAGENT => 'YOURLS-LogoSuite',
+        CURLOPT_TIMEOUT => 5,
+    ]);
+
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code !== 200 || $response === false) {
+        return null;
+    }
+
+    return json_decode($response, true);
+}
+
+// Fetch the latest changelog from GitHub
+function logo_suite_get_latest_changelog() {
+    $cache_key = 'logo_suite_changelog_cache';
+    $cache_time_key = 'logo_suite_changelog_cache_time';
+    $cache_duration = 21600; // 6h
+
+    $cached_changelog = yourls_get_option($cache_key);
+    $cache_time = yourls_get_option($cache_time_key);
+
+    $now = time();
+
+    // Use cache if available and not expired
+    if ($cached_changelog && $cache_time && ($now - intval($cache_time) < $cache_duration)) {
+        return $cached_changelog;
+    }
+
+    // If cache is expired or not available, fetch from GitHub
+    $response = logo_suite_remote_get(LOGO_SUITE_GITHUB_API);
+
+    // Check for GitHub rate limiting
+    if (isset($response['message']) && $response['message'] === 'API rate limit exceeded') {
+        $error_msg = '<p>' . yourls__('GitHub API rate limit exceeded. Please try again later.', 'yourls-logo-suite') . '</p>';
+        yourls_update_option($cache_key, $error_msg);
+        yourls_update_option($cache_time_key, $now);
+        return $error_msg;
+    }    
+
+    // Fallback if no 'body' field present
+    if (!$response || !isset($response['body'])) {
+        if ($cached_changelog) {
+            return $cached_changelog;
+        }
+        return '<p>No changelog available at the moment.</p>';
+    }
+
+    $markdown = $response['body'] ?? '';
+    $html = logo_suite_simple_markdown_to_html($markdown);
+
+    // Update cache
+    yourls_update_option($cache_key, $html);
+    yourls_update_option($cache_time_key, $now);
+
+    return $html;
+}
+
+function logo_suite_simple_markdown_to_html($md) {
+    // Simple conversion: titles and lists
+    $lines = explode("\n", $md);
+    $html = '';
+    $in_list = false;
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if (preg_match('/^### (.+)$/', $line, $matches)) {
+            if ($in_list) { $html .= "</ul>"; $in_list = false; }
+            $html .= '<h3>' . htmlspecialchars($matches[1]) . '</h3>';
+        } elseif (preg_match('/^## (.+)$/', $line, $matches)) {
+            if ($in_list) { $html .= "</ul>"; $in_list = false; }
+            $html .= '<h2>' . htmlspecialchars($matches[1]) . '</h2>';
+        } elseif (preg_match('/^# (.+)$/', $line, $matches)) {
+            if ($in_list) { $html .= "</ul>"; $in_list = false; }
+            $html .= '<h1>' . htmlspecialchars($matches[1]) . '</h1>';
+        } elseif (preg_match('/^[-*+] (.+)$/', $line, $matches)) {
+            if (!$in_list) {
+                $html .= '<ul>';
+                $in_list = true;
+            }
+            $html .= '<li>' . htmlspecialchars($matches[1]) . '</li>';
+        } elseif ($line === '') {
+            if ($in_list) { $html .= "</ul>"; $in_list = false; }
+            $html .= '<br/>';
+        } else {
+            $html .= '<p>' . htmlspecialchars($line) . '</p>';
+        }
+    }
+    if ($in_list) $html .= "</ul>";
+
+    return $html;
 }
