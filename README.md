@@ -35,6 +35,12 @@ Once the plugin is activated, you can access the following options from the sett
 
 ## Changelog
 
+### v1.1
+- Added a built-in update checker that warns you when a new release is available.
+- The settings page now shows the latest changelog fetched from GitHub.
+- Live preview for the custom logo with basic error handling.
+- Introduced full translation support.
+
 ### v1.0
 - Initial release of the plugin.
 
