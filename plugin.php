@@ -3,7 +3,7 @@
 Plugin Name: YOURLS Logo Suite
 Plugin URI: https://github.com/gioxx/YOURLS-LogoSuite
 Description: Customize the YOURLS admin logo and page title from one plugin.
-Version: 1.2.1
+Version: 1.2.2
 Author: Gioxx
 Author URI: https://gioxx.org
 Text Domain: yourls-logo-suite
@@ -12,7 +12,7 @@ Domain Path: /languages
 
 if ( !defined( 'YOURLS_ABSPATH' ) ) die();
 
-define('LOGO_SUITE_VERSION', '1.2.1');
+define('LOGO_SUITE_VERSION', '1.2.2');
 define('LOGO_SUITE_GITHUB_API', 'https://api.github.com/repos/gioxx/YOURLS-LogoSuite/releases/latest');
 define('LOGO_SUITE_GITHUB_URL', 'https://github.com/gioxx/YOURLS-LogoSuite/releases/latest');
 
@@ -118,6 +118,29 @@ function logo_suite_config_page() {
             border-radius: 5px;
             cursor: pointer;
         }
+        .plugin-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            opacity: 0.85;
+        }
+        .plugin-footer a {
+            color: #0073aa;
+            text-decoration: none;
+        }
+        .plugin-footer a:hover {
+            text-decoration: underline;
+        }
+        .plugin-footer .github-icon {
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            display: inline-block;
+        }
     </style>';
 
     // Display plugin header
@@ -199,6 +222,15 @@ function logo_suite_config_page() {
     echo '<div class="logo-suite-section" style="margin-top: 40px;">';
     echo '<h3>' . yourls__('Changelog (Latest Release)', 'yourls-logo-suite') . '</h3>';
     echo logo_suite_get_latest_changelog();
+    echo '</div>';
+
+    echo '<div class="plugin-footer">';
+    echo '<a href="https://github.com/gioxx/YOURLS-LogoSuite" target="_blank" rel="noopener noreferrer">';
+    echo '<img src="https://github.githubassets.com/favicons/favicon.png" class="github-icon" alt="GitHub Icon" />';
+    echo 'YOURLS Logo Suite</a><br>';
+    echo '❤️ Lovingly developed by the usually-on-vacation brain cell of ';
+    echo '<a href="https://github.com/gioxx" target="_blank" rel="noopener noreferrer">Gioxx</a> – ';
+    echo '<a href="https://gioxx.org" target="_blank" rel="noopener noreferrer">Gioxx\'s Wall</a>';
     echo '</div>';
 
     echo <<<JS
