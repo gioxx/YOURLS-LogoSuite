@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.2\n"
+"Project-Id-Version: YOURLS Logo Suite 1.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/gioxx/YOURLS-LogoSuite/issues\n"
 "POT-Creation-Date: 2025-05-25\n"
 "Language: \n"
@@ -111,4 +111,28 @@ msgstr ""
 
 #: plugin.php:194
 msgid "Are you sure you want to reset all settings?"
+msgstr ""
+
+#: plugin.php:200
+msgid "Changelog (Latest Release)"
+msgstr ""
+
+#: plugin.php:318 plugin.php:338
+msgid "New version available:"
+msgstr ""
+
+#: plugin.php:319 plugin.php:339
+msgid "View details on GitHub"
+msgstr ""
+
+#: plugin.php:360
+msgid "Update Available"
+msgstr ""
+
+#: plugin.php:410
+msgid "GitHub API rate limit exceeded. Please try again later."
+msgstr ""
+
+#: plugin.php:421
+msgid "No changelog available at the moment."
 msgstr ""

@@ -1,13 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.2\n"
-"Report-Msgid-Bugs-To: https://github.com/gioxx/YOURLS-LogoSuite/issues\n"
-"POT-Creation-Date: 2025-05-25\n"
+"Project-Id-Version: YOURLS Logo Suite\n"
+"POT-Creation-Date: 2025-05-26 11:06+0200\n"
+"PO-Revision-Date: 2025-05-26 11:12+0200\n"
+"Last-Translator: Giovanni Solone <giovanni@solone.it>\n"
+"Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: yourls__;yourls_e\n"
+"X-Poedit-SearchPath-0: plugin.php\n"
 
 #: plugin.php:38
 msgid "YOURLS Logo Suite Settings"
@@ -15,11 +20,11 @@ msgstr "Impostazioni di YOURLS Logo Suite"
 
 #: plugin.php:49
 msgid "Settings updated successfully!"
-msgstr "Impostazioni aggiornate con successo!"
+msgstr "Impostazioni salvate correttamente!"
 
 #: plugin.php:56
 msgid "Settings reset to default."
-msgstr "Impostazioni ripristinate ai valori predefiniti."
+msgstr "Le impostazioni vengono riportate ai valori predefiniti."
 
 #: plugin.php:125
 msgid "YOURLS Logo Suite"
@@ -31,19 +36,19 @@ msgstr "Versione:"
 
 #: plugin.php:143
 msgid "Logo Settings"
-msgstr "Impostazioni Logo"
+msgstr "Impostazioni logo"
 
 #: plugin.php:144
 msgid "Image URL"
-msgstr "URL immagine"
+msgstr "URL del'Immagine"
 
 #: plugin.php:146
 msgid "Example: a direct link to your logo image (PNG, JPG, SVG)."
-msgstr "Esempio: un collegamento diretto alla tua immagine logo (PNG, JPG, SVG)."
+msgstr "Esempio: un link diretto all'immagine del vostro logo (PNG, JPG, SVG)."
 
 #: plugin.php:152
 msgid "Unable to load the image. Please check the URL."
-msgstr "Impossibile caricare l'immagine. Controlla l'URL."
+msgstr "Impossibile caricare l'immagine. Controllare l'URL."
 
 #: plugin.php:158
 msgid "ALT Tag"
@@ -67,11 +72,11 @@ msgstr "Torna al pannello"
 
 #: plugin.php:164
 msgid "Example: tooltip text shown on hover."
-msgstr "Esempio: testo del suggerimento visibile al passaggio del mouse."
+msgstr "Esempio: testo mostrato al passaggio del mouse."
 
 #: plugin.php:172
 msgid "Page Title Settings"
-msgstr "Impostazioni titolo della pagina"
+msgstr "Impostazioni del titolo pagina"
 
 #: plugin.php:173
 msgid "Custom Title"
@@ -83,7 +88,7 @@ msgstr "Il mio pannello YOURLS"
 
 #: plugin.php:175
 msgid "Example: your custom page title."
-msgstr "Esempio: il tuo titolo personalizzato per la pagina."
+msgstr "Esempio: il titolo personalizzato da visualizzare nella pagina."
 
 #: plugin.php:179
 msgid "Keep “(YOURLS)” after the custom title"
@@ -103,7 +108,7 @@ msgstr "Salva le modifiche apportate al logo e al titolo."
 
 #: plugin.php:187 plugin.php:194
 msgid "Reset to Default"
-msgstr "Ripristina predefiniti"
+msgstr "Ripristina impostazioni predefinite"
 
 #: plugin.php:187
 msgid "Restores original YOURLS logo and title, removing all customizations."
@@ -112,3 +117,27 @@ msgstr "Ripristina il logo e il titolo originali di YOURLS, rimuovendo tutte le 
 #: plugin.php:194
 msgid "Are you sure you want to reset all settings?"
 msgstr "Sei sicuro di voler ripristinare tutte le impostazioni?"
+
+#: plugin.php:200
+msgid "Changelog (Latest Release)"
+msgstr "Changelog (ultima versione)"
+
+#: plugin.php:318 plugin.php:338
+msgid "New version available:"
+msgstr "Nuova versione disponibile:"
+
+#: plugin.php:319 plugin.php:339
+msgid "View details on GitHub"
+msgstr "Visualizza dettagli su GitHub"
+
+#: plugin.php:360
+msgid "Update Available"
+msgstr "Aggiornamento disponibile"
+
+#: plugin.php:410
+msgid "GitHub API rate limit exceeded. Please try again later."
+msgstr "Limite delle richieste API di GitHub superato. Riprova più tardi."
+
+#: plugin.php:421
+msgid "No changelog available at the moment."
+msgstr "Nessun changelog disponibile al momento."
