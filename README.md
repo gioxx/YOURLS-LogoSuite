@@ -1,7 +1,5 @@
 # YOURLS Logo Suite
 
-**The plugin is currently a work in progress, so I do not recommend its installation yet.**
-
 **YOURLS Logo Suite** is a plugin for [YOURLS](https://yourls.org/), allowing you to easily customize the admin logo and the page title. With this suite, you can upload your custom logo, set a custom page title, and configure various accessibility details like `alt` and `title` attributes for the logo.
 
 ## Features
@@ -36,6 +34,16 @@ Once the plugin is activated, you can access the following options from the sett
 5. **Keep "YOURLS" Suffix:** If enabled, the custom title will keep the "(YOURLS)" suffix by default.
 
 ## Changelog
+
+### v1.2.1
+- Updated Italian translation.
+- Improved settings handling logic.
+- Fixed a bug that prevented the custom logo from being displayed.
+
+### v1.2
+- Added automatic update checking.
+- Improved admin notification handling.
+- Fixed a bug that prevented the custom page title from being displayed.
 
 ### v1.1
 - Added a built-in update checker that warns you when a new release is available.
