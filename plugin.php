@@ -3,7 +3,7 @@
 Plugin Name: YOURLS Logo Suite
 Plugin URI: https://github.com/gioxx/YOURLS-LogoSuite
 Description: Customize the YOURLS admin logo and page title from one plugin.
-Version: 1.1
+Version: 1.2
 Author: Gioxx
 Author URI: https://gioxx.org
 Text Domain: yourls-logo-suite
@@ -12,7 +12,7 @@ Domain Path: /languages
 
 if ( !defined( 'YOURLS_ABSPATH' ) ) die();
 
-define('LOGO_SUITE_VERSION', '1.1');
+define('LOGO_SUITE_VERSION', '1.2');
 define('LOGO_SUITE_GITHUB_API', 'https://api.github.com/repos/gioxx/YOURLS-LogoSuite/releases/latest');
 define('LOGO_SUITE_GITHUB_URL', 'https://github.com/gioxx/YOURLS-LogoSuite/releases/latest');
 
@@ -26,9 +26,8 @@ function logo_suite_load_textdomain() {
     // try load .mo first
     if ( file_exists( $path . "{$domain}-{$locale}.mo" ) ) {
         yourls_load_textdomain( $domain, $path . "{$domain}-{$locale}.mo" );
-    }
-    // fallback try load .po (non compilato)
-    elseif ( file_exists( $path . "{$domain}-{$locale}.po" ) ) {
+    } elseif ( file_exists( $path . "{$domain}-{$locale}.po" ) ) {
+        // fallback try load .po
         yourls_load_textdomain( $domain, $path . "{$domain}-{$locale}.po" );
     }
 }
@@ -68,13 +67,26 @@ function logo_suite_config_page() {
 
     // Start output
     echo '<style>
-        h2.plugin-title {
-            font-size: 2.2em;
-            color: #2c3e50;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 30px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        .plugin-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .plugin-title {
+            margin: 0;
+            padding: 0;
+            font-family: \'Arial\', sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#0073aa, #00a8e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .plugin-version {
+            margin: 0;
+            padding: 0;
+            font-size: 0.8em;
+            color: #666;
         }
         .logo-suite-section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; background: #fafafa; border-radius: 5px; }
         .logo-suite-section h3 { margin-top: 0; font-weight: 600; }
@@ -108,7 +120,11 @@ function logo_suite_config_page() {
         }
     </style>';
 
-    echo '<h2 class="plugin-title">' . yourls__('YOURLS Logo Suite', 'yourls-logo-suite') . '</h2>';
+    // Display plugin header
+    echo '<div class="plugin-header">';
+    echo '<h2 class="plugin-title">★ ' . yourls__('YOURLS Logo Suite', 'yourls-logo-suite') . '</h2>';
+    echo '<p class="plugin-version">' . yourls__('Version:', 'yourls-logo-suite') . ' ' . LOGO_SUITE_VERSION . '</p>';
+    echo '</div>';
 
     // Display admin messages
     foreach ($messages as $msg) {

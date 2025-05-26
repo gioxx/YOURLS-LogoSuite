@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.1\n"
+"Project-Id-Version: YOURLS Logo Suite 1.2\n"
 "Report-Msgid-Bugs-To: https://github.com/gioxx/YOURLS-LogoSuite/issues\n"
 "POT-Creation-Date: 2025-05-25\n"
 "Language: \n"
@@ -9,126 +9,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: plugin.php:27
+#: plugin.php:38
 msgid "YOURLS Logo Suite Settings"
 msgstr ""
 
-#: plugin.php:37
+#: plugin.php:49
 msgid "Settings updated successfully!"
 msgstr ""
 
-#: plugin.php:43
+#: plugin.php:56
 msgid "Settings reset to default."
 msgstr ""
 
-#: plugin.php:75
+#: plugin.php:125
 msgid "YOURLS Logo Suite"
 msgstr ""
 
-#: plugin.php:93
+#: plugin.php:126
+msgid "Version:"
+msgstr ""
+
+#: plugin.php:143
 msgid "Logo Settings"
 msgstr ""
 
-#: plugin.php:96
+#: plugin.php:144
 msgid "Image URL"
 msgstr ""
 
-#: plugin.php:97
+#: plugin.php:146
 msgid "Example: a direct link to your logo image (PNG, JPG, SVG)."
 msgstr ""
 
-#: plugin.php:106
+#: plugin.php:152
 msgid "Unable to load the image. Please check the URL."
 msgstr ""
 
-#: plugin.php:112
+#: plugin.php:158
 msgid "ALT Tag"
 msgstr ""
 
-#: plugin.php:113
+#: plugin.php:159
 msgid "My Custom Logo"
 msgstr ""
 
-#: plugin.php:114
+#: plugin.php:160
 msgid "Example: descriptive text for accessibility."
 msgstr ""
 
-#: plugin.php:117
+#: plugin.php:162
 msgid "Title Attribute"
 msgstr ""
 
-#: plugin.php:118
+#: plugin.php:163
 msgid "Back to Dashboard"
 msgstr ""
 
-#: plugin.php:119
+#: plugin.php:164
 msgid "Example: tooltip text shown on hover."
 msgstr ""
 
-#: plugin.php:124
+#: plugin.php:172
 msgid "Page Title Settings"
 msgstr ""
 
-#: plugin.php:127
+#: plugin.php:173
 msgid "Custom Title"
 msgstr ""
 
-#: plugin.php:128
+#: plugin.php:174
 msgid "My YOURLS Panel"
 msgstr ""
 
-#: plugin.php:129
+#: plugin.php:175
 msgid "Example: your custom page title."
 msgstr ""
 
-#: plugin.php:132
+#: plugin.php:179
 msgid "Keep “(YOURLS)” after the custom title"
 msgstr ""
 
-#: plugin.php:136
+#: plugin.php:185
 msgid "Note:"
 msgstr ""
 
-#: plugin.php:137
+#: plugin.php:186 plugin.php:192
 msgid "Save Settings"
 msgstr ""
 
-#: plugin.php:137
+#: plugin.php:186
 msgid "Saves the changes you made to logo and title."
 msgstr ""
 
-#: plugin.php:138
+#: plugin.php:187 plugin.php:194
 msgid "Reset to Default"
 msgstr ""
 
-#: plugin.php:138
+#: plugin.php:187
 msgid "Restores original YOURLS logo and title, removing all customizations."
 msgstr ""
 
-#: plugin.php:142
+#: plugin.php:194
 msgid "Are you sure you want to reset all settings?"
-msgstr ""
-
-#: plugin.php:147
-msgid "Changelog (Latest Release)"
-msgstr ""
-
-#: plugin.php:297
-msgid "GitHub API rate limit exceeded. Please try again later."
-msgstr ""
-
-#: plugin.php:413
-msgid "New version available: %s!"
-msgstr ""
-
-#: plugin.php:415
-msgid "View details on GitHub"
-msgstr ""
-
-#: plugin.php:432
-msgid "Update Available"
-msgstr ""
-
-#: plugin.php:466
-msgid "No changelog available at the moment."
 msgstr ""
