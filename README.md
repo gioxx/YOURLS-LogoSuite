@@ -1,72 +1,74 @@
-# YOURLS Logo Suite
+# ⭐ YOURLS Logo Suite
 
-**YOURLS Logo Suite** is a plugin for [YOURLS](https://yourls.org/), allowing you to easily customize the admin logo and the page title. With this suite, you can upload your custom logo, set a custom page title, and configure various accessibility details like `alt` and `title` attributes for the logo.
+**Customize your YOURLS admin panel with your own logo and title — effortlessly.**  
+Give your YOURLS install a personal touch that reflects your brand or style.
 
-## Features
+[![Latest Release](https://img.shields.io/github/v/release/gioxx/YOURLS-LogoSuite)](https://github.com/gioxx/YOURLS-LogoSuite/releases)
+[![License](https://img.shields.io/github/license/gioxx/YOURLS-LogoSuite)](LICENSE)
 
-- **Custom Logo:** Set a custom logo URL for the YOURLS admin area.
-- **Logo `alt` and `title` text:** Configure the `alt` text for accessibility and a custom title that appears when the user hovers over the logo.
-- **Custom Page Title:** Modify the YOURLS page title with your own text, including the option to append a suffix like "YOURLS".
-- **Reset to Default:** Restore the original logo and title settings at any time.
+---
 
-## Installation
+## 🚀 Features
 
-1. **Upload the Plugin:**
-   - Download the plugin archive from [GitHub](https://github.com/gioxx/YOURLS-LogoSuite) or clone it directly to your server.
-   - Upload the plugin folder to the `user/plugins/` directory of your YOURLS installation.
+- Link to a custom logo (PNG, JPG, SVG)
+- Replace the default page title with your own
+- Toggle the "(YOURLS)" suffix in the page title
+- Live logo preview with error handling
+- Admin settings panel with inline tooltips
+- Automatic update checker
+- Displays the latest changelog from GitHub
+- Fully internationalized (i18n-ready)
 
-2. **Activate the Plugin:**
-   - Go to the **Plugins** section in the YOURLS admin panel.
-   - Find **YOURLS Logo Suite** in the plugin list and click "Activate".
+---
 
-3. **Configuration:**
-   - Once activated, you'll find a new menu item in the admin menu called **YOURLS Logo Suite Settings**.
-   - From there, you can upload your custom logo, configure the `alt` and `title` attributes, customize the page title, and more.
+## 🛠 Installation
 
-## Usage
+1. Download the plugin from [the latest release](https://github.com/gioxx/YOURLS-LogoSuite/releases).
+2. Unzip the contents into the `user/plugins/yourls-logo-suite/` directory.
+3. Activate the plugin in the YOURLS admin panel.
+4. Go to the plugin settings page to configure your custom logo and title.
 
-Once the plugin is activated, you can access the following options from the settings page:
+> **Requires YOURLS 1.9+**
 
-1. **Logo URL:** Enter the URL of your custom logo image (can be a direct link to a PNG, JPG, SVG, etc.).
-2. **Logo ALT Tag:** Add a descriptive `alt` text for your logo, helpful for accessibility.
-3. **Logo Title Attribute:** Set a custom title text that appears as a tooltip when the user hovers over the logo.
-4. **Custom Page Title:** Set a custom title for the YOURLS page. If you prefer, you can append a suffix like "YOURLS" for branding consistency.
-5. **Keep "YOURLS" Suffix:** If enabled, the custom title will keep the "(YOURLS)" suffix by default.
+---
 
-## Changelog
+## ⚙️ Usage
 
-### v1.2.1
-- Updated Italian translation.
-- Improved settings handling logic.
-- Fixed a bug that prevented the custom logo from being displayed.
+### Customize the Admin Logo
+Paste a direct URL to your logo (or use a hosted file). Supported formats: **PNG, JPG, SVG**.
 
-### v1.2
-- Added automatic update checking.
-- Improved admin notification handling.
-- Fixed a bug that prevented the custom page title from being displayed.
+### Set a Custom Title
+Replace the default "YOURLS" browser title with your own — and optionally keep the "(YOURLS)" suffix.
 
-### v1.1
-- Added a built-in update checker that warns you when a new release is available.
-- The settings page now shows the latest changelog fetched from GitHub.
-- Live preview for the custom logo with basic error handling.
-- Introduced full translation support.
+### Reset Anytime
+Need to go back to default settings? One click is all it takes.
 
-### v1.0
-- Initial release of the plugin.
+---
 
-For further changes and updates, please refer to the [GitHub repository](https://github.com/gioxx/YOURLS-LogoSuite).
+## 🌐 Translation
 
-## FAQ
+This plugin is fully localized.  
+Available languages:
+- 🇬🇧 English (default)
+- 🇮🇹 Italian
 
-### How can I reset the plugin settings?
-You can reset the settings by going to the plugin settings page and clicking on the **Reset to Default** button. This will restore the original YOURLS logo and page title.
+You can contribute new translations via `.po`/`.mo` files inside the `languages/` folder.
 
-### What image formats are supported for the logo?
-YOURLS Logo Suite supports common image formats like PNG, JPG, and SVG for the logo.
+---
 
-### Will the plugin work with the default YOURLS theme?
-Yes, this plugin is designed to work with the default YOURLS admin theme.
+## 📝 Changelog
 
-## License
+See the [CHANGELOG](https://github.com/gioxx/YOURLS-LogoSuite/releases) or open the plugin settings page — the latest release notes are displayed directly there thanks to live GitHub integration.
 
-This plugin is licensed under the [MIT License](LICENSE).
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!  
+If you find bugs or have feature requests, [open an issue](https://github.com/gioxx/YOURLS-LogoSuite/issues).
+
+---
+
+## 📄 License
+
+MIT — see [`LICENSE`](LICENSE) file for details.
