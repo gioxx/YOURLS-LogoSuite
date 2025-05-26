@@ -3,7 +3,7 @@
 Plugin Name: YOURLS Logo Suite
 Plugin URI: https://github.com/gioxx/YOURLS-LogoSuite
 Description: Customize the YOURLS admin logo and page title from one plugin.
-Version: 1.2
+Version: 1.2.1
 Author: Gioxx
 Author URI: https://gioxx.org
 Text Domain: yourls-logo-suite
@@ -12,7 +12,7 @@ Domain Path: /languages
 
 if ( !defined( 'YOURLS_ABSPATH' ) ) die();
 
-define('LOGO_SUITE_VERSION', '1.2');
+define('LOGO_SUITE_VERSION', '1.2.1');
 define('LOGO_SUITE_GITHUB_API', 'https://api.github.com/repos/gioxx/YOURLS-LogoSuite/releases/latest');
 define('LOGO_SUITE_GITHUB_URL', 'https://github.com/gioxx/YOURLS-LogoSuite/releases/latest');
 
@@ -195,8 +195,9 @@ function logo_suite_config_page() {
     echo '<input type="hidden" name="nonce_reset" value="' . $nonce_reset . '" />';
     echo '</div>';
 
+    // Changelog section
     echo '<div class="logo-suite-section" style="margin-top: 40px;">';
-    echo '<h3>Changelog (Latest Release)</h3>';
+    echo '<h3>' . yourls__('Changelog (Latest Release)', 'yourls-logo-suite') . '</h3>';
     echo logo_suite_get_latest_changelog();
     echo '</div>';
 
@@ -314,8 +315,8 @@ function logo_suite_show_update_notice() {
     if ($checked) {
         if ($update_available) {
             echo '<div class="notice notice-info" style="margin:10px 0; padding:10px; border-left: 4px solid #0073aa;">';
-            echo '🆕 <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . $latest_version . '</strong>! ';
-            echo '<a href="' . $release_url . '" target="_blank">View details on GitHub</a>.';
+            echo '🆕 <strong>YOURLS Logo Suite</strong>: ' . yourls__('New version available:', 'yourls-logo-suite') . ' <strong>' . $latest_version . '</strong>! ';
+            echo '<a href="' . $release_url . '" target="_blank">' . yourls__('View details on GitHub', 'yourls-logo-suite') . '</a>';
             echo '</div>';
         }
         return;
@@ -334,8 +335,8 @@ function logo_suite_show_update_notice() {
         $release_url = $response['html_url'];
 
         echo '<div class="notice notice-info" style="margin:10px 0; padding:10px; border-left: 4px solid #0073aa;">';
-        echo '🆕 <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . $latest_version . '</strong>! ';
-        echo '<a href="' . $release_url . '" target="_blank">View details on GitHub</a>.';
+        echo '🆕 <strong>YOURLS Logo Suite</strong>: ' . yourls__('New version available:', 'yourls-logo-suite') . ' <strong>' . $latest_version . '</strong>! ';
+        echo '<a href="' . $release_url . '" target="_blank">' . yourls__('View details on GitHub', 'yourls-logo-suite') . '</a>';
         echo '</div>';
     }
 }
@@ -356,9 +357,10 @@ function logo_suite_page_title_with_badge( $title ) {
     }
 
     if ( $update_available ) {
-        $badge = ' <span style="background:#0073aa;color:#fff;font-size:0.8em;padding:2px 6px;border-radius:3px;vertical-align:middle;">Update Available</span>';
+        $badge_text = yourls__('Update Available', 'yourls-logo-suite');
+        $badge = ' <span style="background:#0073aa;color:#fff;font-size:0.8em;padding:2px 6px;border-radius:3px;vertical-align:middle;">' . $badge_text . '</span>';
         return $title . $badge;
-    }
+    }    
 
     return $title;
 }
@@ -416,8 +418,8 @@ function logo_suite_get_latest_changelog() {
         if ($cached_changelog) {
             return $cached_changelog;
         }
-        return '<p>No changelog available at the moment.</p>';
-    }
+        return '<p>' . yourls__('No changelog available at the moment.', 'yourls-logo-suite') . '</p>';
+    }    
 
     $markdown = $response['body'] ?? '';
     $html = logo_suite_simple_markdown_to_html($markdown);
