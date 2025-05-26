@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YOURLS Logo Suite\n"
 "POT-Creation-Date: 2025-05-26 11:06+0200\n"
-"PO-Revision-Date: 2025-05-26 11:12+0200\n"
+"PO-Revision-Date: 2025-05-26 11:48+0200\n"
 "Last-Translator: Giovanni Solone <giovanni@solone.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -40,7 +40,7 @@ msgstr "Impostazioni logo"
 
 #: plugin.php:144
 msgid "Image URL"
-msgstr "URL del'Immagine"
+msgstr "URL dell'immagine"
 
 #: plugin.php:146
 msgid "Example: a direct link to your logo image (PNG, JPG, SVG)."
