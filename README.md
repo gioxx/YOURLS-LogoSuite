@@ -21,7 +21,7 @@ Give your YOURLS install a personal touch that reflects your brand or style.
 
 ---
 
-## 🛠 Installation
+## 🛠️ Installation
 
 1. Download the plugin from [the latest release](https://github.com/gioxx/YOURLS-LogoSuite/releases).
 2. Unzip the contents into the `user/plugins/yourls-logo-suite/` directory.
@@ -62,13 +62,20 @@ See the [CHANGELOG](https://github.com/gioxx/YOURLS-LogoSuite/releases) or open 
 
 ---
 
-## 🤝 Contributing
+## 📄 License
 
-Pull requests are welcome!  
-If you find bugs or have feature requests, [open an issue](https://github.com/gioxx/YOURLS-LogoSuite/issues).
+This plugin is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 📄 License
+## 💬 About
 
-MIT — see [`LICENSE`](LICENSE) file for details.
+Lovingly developed by the usually-on-vacation brain cell of [Gioxx](https://github.com/gioxx), using ChatGPT to speed up some of the development and correct some rubbish.  
+
+---
+
+## 🤝 Contributing
+
+Pull requests and feature suggestions are welcome.  
+If you find bugs or have feature requests, [open an issue](https://github.com/gioxx/YOURLS-LogoSuite/issues).  
+If you find it useful, leave a ⭐ on GitHub! ❤️
