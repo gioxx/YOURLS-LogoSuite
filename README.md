@@ -1,81 +1,75 @@
 # ⭐ YOURLS Logo Suite
 
-**Customize your YOURLS admin panel with your own logo and title — effortlessly.**  
-Give your YOURLS install a personal touch that reflects your brand or style.
+Customize YOURLS branding from a single admin page: logo, title, and display behavior.
 
 [![Latest Release](https://img.shields.io/github/v/release/gioxx/YOURLS-LogoSuite)](https://github.com/gioxx/YOURLS-LogoSuite/releases)
 [![License](https://img.shields.io/github/license/gioxx/YOURLS-LogoSuite)](LICENSE)
 
----
-
 ## 🚀 Features
 
-- Link to a custom logo (PNG, JPG, SVG)
-- Replace the default page title with your own
-- Toggle the "(YOURLS)" suffix in the page title
-- Live logo preview with error handling
-- Admin settings panel with inline tooltips
-- Automatic update checker
-- Displays the latest changelog from GitHub
-- Fully internationalized (i18n-ready)
-
----
+- Admin menu entry: `Branding Settings`
+- Custom logo via URL (`PNG`, `JPG`, `SVG`, etc.)
+- Local logo upload (`PNG`, `JPG/JPEG`, `GIF`, `WEBP`, max 5 MB)
+- Live logo preview with load/error feedback
+- Logo display controls:
+  - `Width (px)`
+  - `Height (px)`
+  - `Keep aspect ratio`
+- Custom browser title for YOURLS admin pages
+- Optional `"(YOURLS)"` suffix in title
+- HTTPS safety check: warns/blocks insecure `http://` logo URL when admin runs on HTTPS
+- Update-available notice + badge based on GitHub latest release
+- i18n-ready (`English`, `Italian`)
 
 ## 🛠️ Installation
 
-1. Download the plugin from [the latest release](https://github.com/gioxx/YOURLS-LogoSuite/releases).
-2. Unzip the contents into the `user/plugins/yourls-logo-suite/` directory.
-3. Activate the plugin in the YOURLS admin panel.
-4. Go to the plugin settings page to configure your custom logo and title.
+1. Download the latest release: <https://github.com/gioxx/YOURLS-LogoSuite/releases>
+2. Unzip into `user/plugins/yourls-logo-suite/`
+3. Activate the plugin from YOURLS admin
+4. Open `Manage Plugins` → `Branding Settings`
 
-> **Requires YOURLS 1.9+**
-
----
+Requires YOURLS `1.9+`.
 
 ## ⚙️ Usage
 
-### Customize the Admin Logo
-Paste a direct URL to your logo (or use a hosted file). Supported formats: **PNG, JPG, SVG**.
+### Logo
 
-### Set a Custom Title
-Replace the default "YOURLS" browser title with your own — and optionally keep the "(YOURLS)" suffix.
+- Set an image URL, or upload a local file
+- Uploaded files are stored in `user/uploads/logo-suite/`
+- If you select a file, click `Save Settings` to complete upload
 
-### Reset Anytime
-Need to go back to default settings? One click is all it takes.
+### Logo Size
 
----
+- Use `Width` / `Height` to control rendered logo size
+- Keep `Keep aspect ratio` enabled for proportional resize
+- Leave width/height empty to use default rendering behavior
+
+### Page Title
+
+- Set a custom admin page title
+- Choose whether to keep the `"(YOURLS)"` suffix
+
+### Reset
+
+- `Reset to Default` clears all saved options (logo, title, size settings)
 
 ## 🌐 Translation
 
-This plugin is fully localized.  
 Available languages:
+
 - 🇬🇧 English (default)
 - 🇮🇹 Italian
 
-You can contribute new translations via `.po`/`.mo` files inside the `languages/` folder.
-
----
+Translations live in `languages/` (`.po` / `.mo`).
 
 ## 📝 Changelog
 
-See the [CHANGELOG](https://github.com/gioxx/YOURLS-LogoSuite/releases) or open the plugin settings page — the latest release notes are displayed directly there thanks to live GitHub integration.
-
----
+Release notes: <https://github.com/gioxx/YOURLS-LogoSuite/releases>
 
 ## 📄 License
 
-This plugin is licensed under the [MIT License](LICENSE).
-
----
-
-## 💬 About
-
-Lovingly developed by the usually-on-vacation brain cell of [Gioxx](https://github.com/gioxx), using ChatGPT to speed up some of the development and correct some rubbish.  
-
----
+MIT License. See [LICENSE](LICENSE).
 
 ## 🤝 Contributing
 
-Pull requests and feature suggestions are welcome.  
-If you find bugs or have feature requests, [open an issue](https://github.com/gioxx/YOURLS-LogoSuite/issues).  
-If you find it useful, leave a ⭐ on GitHub! ❤️
+Issues and PRs are welcome: <https://github.com/gioxx/YOURLS-LogoSuite/issues>
