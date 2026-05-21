@@ -99,20 +99,38 @@ function prefillDimensionsFromLoadedImage() {
     }
 }
 
+function normalizeLogoPreviewUrl(value) {
+    const url = value.trim();
+    if (!url) {
+        return '';
+    }
+
+    try {
+        const parsedUrl = new URL(url, window.location.href);
+        if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+            return '';
+        }
+
+        return parsedUrl.href;
+    } catch (error) {
+        return '';
+    }
+}
+
 function updateLogoPreview() {
     const { input, preview, error } = getPreviewElements();
     if (!input || !preview || !error) {
         return;
     }
 
-    const url = input.value.trim();
+    const url = normalizeLogoPreviewUrl(input.value);
     error.classList.add('logo-preview-hidden');
 
     if (url) {
         preview.src = url;
         preview.classList.remove('logo-preview-hidden');
     } else {
-        preview.src = '';
+        preview.removeAttribute('src');
         preview.classList.add('logo-preview-hidden');
         error.classList.add('logo-preview-hidden');
     }
@@ -173,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     input.addEventListener('blur', function () {
-        const url = input.value.trim();
+        const url = normalizeLogoPreviewUrl(input.value);
         const hasLocalUpload = fileInput && fileInput.files && fileInput.files.length > 0;
         if (hasLocalUpload) {
             return;
@@ -190,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const url = input.value.trim();
+        const url = normalizeLogoPreviewUrl(input.value);
         const hasLocalUpload = fileInput && fileInput.files && fileInput.files.length > 0;
         if (hasLocalUpload) {
             return;
