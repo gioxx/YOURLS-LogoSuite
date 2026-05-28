@@ -64,6 +64,7 @@ function logo_suite_config_page() {
     $nonce_reset    = yourls_create_nonce( 'logo_suite_reset' );
 
     logo_suite_print_admin_assets();
+    logo_suite_show_update_notice();
 
     echo '<div class="logo-suite-header">';
     echo '<h2 class="logo-suite-title">&#127912; <span class="logo-suite-title-text">' . yourls__( 'YOURLS Logo Suite', 'yourls-logo-suite' ) . '</span></h2>';
