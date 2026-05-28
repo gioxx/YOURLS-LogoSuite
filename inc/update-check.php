@@ -15,7 +15,7 @@ function logo_suite_show_update_notice() {
     if ( !$release ) return;
     $latest = ltrim( $release['tag_name'], 'v' );
     if ( version_compare( $latest, LOGO_SUITE_VERSION, '>' ) ) {
-        echo '<div class="notice notice-info logo-suite-update-notice">&#x1F195; <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . $latest . '</strong>! <a href="' . $release['html_url'] . '" target="_blank">View details on GitHub</a></div>';
+        echo '<div class="notice notice-info logo-suite-update-notice">&#x1F195; <strong>YOURLS Logo Suite</strong>: New version available: <strong>' . yourls_esc_attr( $latest ) . '</strong>! <a href="' . yourls_esc_url( $release['html_url'] ) . '" target="_blank">View details on GitHub</a></div>';
     }
 }
 

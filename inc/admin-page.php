@@ -67,7 +67,7 @@ function logo_suite_config_page() {
     logo_suite_show_update_notice();
 
     echo '<div class="logo-suite-header">';
-    echo '<h2 class="logo-suite-title">&#127912; <span class="logo-suite-title-text">' . yourls__( 'YOURLS Logo Suite', 'yourls-logo-suite' ) . '</span></h2>';
+    echo '<h2 class="logo-suite-title">&#127912; <span class="logo-suite-title-text">' . yourls_apply_filters( 'plugin_page_title_logo_suite', yourls__( 'YOURLS Logo Suite', 'yourls-logo-suite' ) ) . '</span></h2>';
     echo '<p class="logo-suite-version">' . yourls__( 'Version:', 'yourls-logo-suite' ) . ' ' . LOGO_SUITE_VERSION . '</p>';
     echo '</div>';
 
