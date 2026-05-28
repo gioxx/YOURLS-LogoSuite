@@ -152,7 +152,7 @@ function checkImageSizeWarning() {
     const w = preview.naturalWidth;
     const h = preview.naturalHeight;
     if (w > 600 || h > 600) {
-        warning.textContent = '⚠️ Large image detected (' + w + '\xD7' + h + ' px): the preview has been scaled down.';
+        warning.textContent = '⚠️ Large image detected (' + w + '\xD7' + h + ' px): the preview has been scaled down. Consider reducing the displayed dimensions before saving again.';
         warning.classList.remove('logo-size-warning-hidden');
     } else {
         warning.textContent = '';
