@@ -43,6 +43,7 @@ Requires YOURLS `1.9+`.
 - Use `Width` / `Height` to control rendered logo size
 - Keep `Keep aspect ratio` enabled for proportional resize
 - Leave width/height empty to use default rendering behavior
+- If the image exceeds 600px on either side, the preview shows a warning suggesting you reduce the display dimensions before saving
 
 ### Page Title
 
