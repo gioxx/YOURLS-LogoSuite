@@ -50,7 +50,6 @@ function applyPreviewSizeSettings() {
         }
     }
 
-    preview.style.maxHeight = 'none';
 }
 
 function syncDimensionsFromRatio(changedField) {
@@ -133,6 +132,8 @@ function updateLogoPreview() {
         preview.removeAttribute('src');
         preview.classList.add('logo-preview-hidden');
         error.classList.add('logo-preview-hidden');
+        const warning = document.getElementById('logo-size-warning');
+        if (warning) warning.classList.add('logo-size-warning-hidden');
     }
 }
 
@@ -144,24 +145,36 @@ function showInsecureLogoAlert() {
     alert('⚠️ Mixed content blocked: this admin is in HTTPS, so the logo URL must also be HTTPS.');
 }
 
+function checkImageSizeWarning() {
+    const { preview } = getPreviewElements();
+    const warning = document.getElementById('logo-size-warning');
+    if (!warning || !preview) return;
+    const w = preview.naturalWidth;
+    const h = preview.naturalHeight;
+    if (w > 600 || h > 600) {
+        warning.textContent = '⚠️ Large image detected (' + w + '\xD7' + h + ' px): the preview has been scaled down.';
+        warning.classList.remove('logo-size-warning-hidden');
+    } else {
+        warning.textContent = '';
+        warning.classList.add('logo-size-warning-hidden');
+    }
+}
+
 function logoPreviewError() {
     const { error } = getPreviewElements();
-    if (!error) {
-        return;
-    }
-
+    if (!error) return;
     error.classList.remove('logo-preview-hidden');
+    const warning = document.getElementById('logo-size-warning');
+    if (warning) warning.classList.add('logo-size-warning-hidden');
 }
 
 function logoPreviewSuccess() {
     const { error } = getPreviewElements();
-    if (!error) {
-        return;
-    }
-
+    if (!error) return;
     error.classList.add('logo-preview-hidden');
     prefillDimensionsFromLoadedImage();
     applyPreviewSizeSettings();
+    checkImageSizeWarning();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
