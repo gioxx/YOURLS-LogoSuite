@@ -134,10 +134,11 @@ svg.logo-icon { flex:0 0 auto; stroke:#4c5f6c; stroke-width:2; fill:none; stroke
 }
 
 /* ── Footer ── */
-.logo-suite-footer      { margin-top:40px; padding-top:20px; border-top:1px solid #ddd; font-size:.9em; color:#666; text-align:center; opacity:.85; }
-.logo-suite-footer a    { color:#0073aa; text-decoration:none; }
-.logo-suite-footer a:hover { text-decoration:underline; }
-.logo-suite-footer .github-icon { vertical-align:middle; width:16px; height:16px; margin-right:4px; display:inline-block; }
+.logo-suite-footer          { margin-top:40px; padding-top:20px; border-top:1px solid #ddd; font-size:.9em; color:#666; opacity:.85; }
+.logo-suite-footer a        { color:#0073aa; text-decoration:none; }
+.logo-suite-footer a:hover  { text-decoration:underline; }
+.logo-suite-footer .github-icon { vertical-align:middle; width:16px; height:16px; margin-right:3px; display:inline-block; }
+.plugin-footer-top          { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
 
 /* ── Update badge ── */
 .logo-suite-update-badge { display:inline-block; margin-left:6px; padding:2px 8px; border-radius:999px; background:#e6f4ff; border:1px solid #8ec5f7; color:#0a4b78; font-size:12px; font-weight:600; vertical-align:middle; }

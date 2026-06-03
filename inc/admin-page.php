@@ -171,8 +171,15 @@ function logo_suite_config_page() {
     echo '</div>';
 
     echo '<div class="logo-suite-footer">';
-    echo '<a href="https://github.com/gioxx/YOURLS-LogoSuite" target="_blank" rel="noopener noreferrer">';
-    echo '<img src="https://github.githubassets.com/favicons/favicon.png" class="github-icon" alt="GitHub"> YOURLS Logo Suite</a><br>';
+    echo '<div class="plugin-footer-top">';
+    echo '<div>';
+    echo '<a href="https://yourls.gioxx.org/plugins/logo-suite" target="_blank" rel="noopener noreferrer">&#127912; YOURLS Logo Suite</a>';
+    echo ' &nbsp;&middot;&nbsp; ';
+    echo '<img src="https://github.githubassets.com/favicons/favicon.png" class="github-icon" alt="">';
+    echo '<a href="https://github.com/gioxx/YOURLS-LogoSuite" target="_blank" rel="noopener noreferrer">GitHub</a>';
+    echo '</div>';
+    echo '<div><a href="#" onclick="window.scrollTo({top:0,behavior:\'smooth\'});return false;">&#8679; Back to top</a></div>';
+    echo '</div>';
     echo '&#10084;&#65039; Lovingly developed by the usually-on-vacation brain cell of ';
     echo '<a href="https://github.com/gioxx" target="_blank" rel="noopener noreferrer">Gioxx</a> &ndash; ';
     echo '<a href="https://gioxx.org" target="_blank" rel="noopener noreferrer">Gioxx\'s Wall</a>';
