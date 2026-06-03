@@ -178,7 +178,7 @@ function logo_suite_config_page() {
     echo '<img src="https://github.githubassets.com/favicons/favicon.png" class="github-icon" alt="">';
     echo '<a href="https://github.com/gioxx/YOURLS-LogoSuite" target="_blank" rel="noopener noreferrer">GitHub</a>';
     echo '</div>';
-    echo '<div><a href="#" onclick="window.scrollTo({top:0,behavior:\'smooth\'});return false;">&#8679; Back to top</a></div>';
+    echo '<div><a href="#" onclick="window.scrollTo({top:0,behavior:\'smooth\'});return false;">&#8593; Back to top</a></div>';
     echo '</div>';
     echo '&#10084;&#65039; Lovingly developed by the usually-on-vacation brain cell of ';
     echo '<a href="https://github.com/gioxx" target="_blank" rel="noopener noreferrer">Gioxx</a> &ndash; ';
