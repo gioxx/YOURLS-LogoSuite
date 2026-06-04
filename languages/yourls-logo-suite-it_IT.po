@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.3.6\n"
+"Project-Id-Version: YOURLS Logo Suite 1.3.7\n"
 "POT-Creation-Date: 2026-06-04\n"
 "PO-Revision-Date: 2026-06-04\n"
 "Last-Translator: Giovanni Solone <giovanni@solone.it>\n"
@@ -52,8 +52,8 @@ msgid "My YOURLS Panel"
 msgstr "Il mio pannello YOURLS"
 
 #: inc/admin-page.php
-msgid "Keep “(YOURLS)” after the custom title"
-msgstr "Mantieni “(YOURLS)” dopo il titolo personalizzato"
+msgid "Keep \"(YOURLS)\" after the custom title"
+msgstr "Mantieni \"(YOURLS)\" dopo il titolo personalizzato"
 
 #: inc/admin-page.php
 msgid "Logo Settings"
@@ -102,6 +102,10 @@ msgstr "Esempio: testo mostrato al passaggio del mouse."
 #: inc/admin-page.php
 msgid "Back to Dashboard"
 msgstr "Torna al pannello"
+
+#: inc/admin-page.php
+msgid "Back to top"
+msgstr "Torna all'inizio"
 
 #: inc/admin-page.php
 msgid "Logo Preview"

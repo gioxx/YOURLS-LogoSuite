@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite 1.3.6\n"
+"Project-Id-Version: YOURLS Logo Suite 1.3.7\n"
 "Report-Msgid-Bugs-To: https://github.com/gioxx/YOURLS-LogoSuite/issues\n"
 "POT-Creation-Date: 2026-06-04\n"
 "Language: \n"
@@ -46,8 +46,8 @@ msgid "My YOURLS Panel"
 msgstr ""
 
 #: inc/admin-page.php
-msgid "Keep “(YOURLS)” after the custom title"
-msgstr ""
+msgid "Keep \"(YOURLS)\" after the custom title"
+msgstr “”
 
 #: inc/admin-page.php
 msgid "Logo Settings"
@@ -95,6 +95,10 @@ msgstr ""
 
 #: inc/admin-page.php
 msgid "Back to Dashboard"
+msgstr ""
+
+#: inc/admin-page.php
+msgid "Back to top"
 msgstr ""
 
 #: inc/admin-page.php
