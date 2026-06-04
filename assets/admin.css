@@ -21,7 +21,7 @@
 
 /* ── Panel ── */
 .logo-suite-panel       { background:#fff; border:1px solid #d9e6ef; border-radius:10px; margin-bottom:18px; box-shadow:0 1px 0 rgba(2,27,45,.04); padding:16px; }
-.logo-suite-heading     { margin:0 0 10px; display:flex; align-items:center; gap:8px; font-size:1.06rem; font-weight:700; color:#0a4b78; }
+.logo-suite-heading     { margin:0 0 12px; display:flex; align-items:center; gap:8px; font-size:1.06rem; font-weight:700; color:#0a4b78; }
 
 /* ── Global hint text ── */
 .logo-suite-panel small { display:block; color:#667885; margin-bottom:7px; font-size:.73rem; line-height:1.4; }

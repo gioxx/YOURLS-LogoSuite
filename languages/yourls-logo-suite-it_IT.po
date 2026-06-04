@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: YOURLS Logo Suite\n"
-"POT-Creation-Date: 2026-03-01\n"
-"PO-Revision-Date: 2026-03-01\n"
+"Project-Id-Version: YOURLS Logo Suite 1.3.6\n"
+"POT-Creation-Date: 2026-06-04\n"
+"PO-Revision-Date: 2026-06-04\n"
 "Last-Translator: Giovanni Solone <giovanni@solone.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -12,196 +12,181 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: yourls__;yourls_e\n"
-"X-Poedit-SearchPath-0: plugin.php\n"
+"X-Poedit-SearchPath-0: inc\n"
+"X-Poedit-SearchPath-1: plugin.php\n"
 
-#: plugin.php:38
+#: inc/admin-page.php
 msgid "Branding Settings"
 msgstr "Impostazioni branding"
 
-#: plugin.php:62
+#: inc/admin-page.php
 msgid "Settings updated successfully!"
 msgstr "Impostazioni salvate correttamente!"
 
-#: plugin.php:69
+#: inc/admin-page.php
 msgid "Settings reset to default."
 msgstr "Le impostazioni vengono riportate ai valori predefiniti."
 
-#: plugin.php:86
+#: inc/admin-page.php inc/update-check.php
 msgid "YOURLS Logo Suite"
 msgstr "YOURLS Logo Suite"
 
-#: plugin.php:87
+#: inc/admin-page.php
 msgid "Version:"
 msgstr "Versione:"
 
-#: plugin.php:153
-msgid "Logo Settings"
-msgstr "Impostazioni logo"
-
-#: plugin.php:105
-msgid "Image URL"
-msgstr "URL dell'immagine"
-
-#: plugin.php:107
-msgid "Example: a direct link to your logo image (PNG, JPG, SVG)."
-msgstr "Esempio: un link diretto all'immagine del vostro logo (PNG, JPG, SVG)."
-
-#: plugin.php:171
-msgid "Logo Preview"
-msgstr "Anteprima logo"
-
-#: plugin.php:181
-msgid "Unknown"
-msgstr "Sconosciuto"
-
-#: plugin.php:182
-msgid "Format"
-msgstr "Formato"
-
-#: plugin.php:183
-msgid "Dimensions"
-msgstr "Dimensioni"
-
-#: plugin.php:184
-msgid "Aspect ratio"
-msgstr "Rapporto"
-
-#: plugin.php:174 plugin.php:177
-msgid "Unable to load the image. Please check the URL."
-msgstr "Impossibile caricare l'immagine. Controllare l'URL."
-
-#: plugin.php:120
-msgid "ALT Tag"
-msgstr "Tag ALT"
-
-#: plugin.php:121
-msgid "My Custom Logo"
-msgstr "Il mio logo personalizzato"
-
-#: plugin.php:122
-msgid "Example: descriptive text for accessibility."
-msgstr "Esempio: testo descrittivo per l'accessibilità."
-
-#: plugin.php:124
-msgid "Title Attribute"
-msgstr "Attributo Title"
-
-#: plugin.php:125
-msgid "Back to Dashboard"
-msgstr "Torna al pannello"
-
-#: plugin.php:126
-msgid "Example: tooltip text shown on hover."
-msgstr "Esempio: testo mostrato al passaggio del mouse."
-
-#: plugin.php:134
+#: inc/admin-page.php
 msgid "Page Title Settings"
 msgstr "Impostazioni del titolo pagina"
 
-#: plugin.php:135
+#: inc/admin-page.php
 msgid "Custom Title"
 msgstr "Titolo personalizzato"
 
-#: plugin.php:136
-msgid "My YOURLS Panel"
-msgstr "Il mio pannello YOURLS"
-
-#: plugin.php:137
+#: inc/admin-page.php
 msgid "Example: your custom page title."
 msgstr "Esempio: il titolo personalizzato da visualizzare nella pagina."
 
-#: plugin.php:141
+#: inc/admin-page.php
+msgid "My YOURLS Panel"
+msgstr "Il mio pannello YOURLS"
+
+#: inc/admin-page.php
 msgid "Keep “(YOURLS)” after the custom title"
 msgstr "Mantieni “(YOURLS)” dopo il titolo personalizzato"
 
-#: plugin.php:147
-msgid "Notes"
-msgstr "Note"
+#: inc/admin-page.php
+msgid "Logo Settings"
+msgstr "Impostazioni logo"
 
-#: plugin.php:149 plugin.php:156
-msgid "Save Settings"
-msgstr "Salva impostazioni"
+#: inc/admin-page.php
+msgid "Image URL"
+msgstr "URL dell'immagine"
 
-#: plugin.php:149
-msgid "Saves the changes you made to logo and title."
-msgstr "Salva le modifiche apportate al logo e al titolo."
+#: inc/admin-page.php
+msgid "Example: a direct link to your logo image (PNG, JPG, SVG)."
+msgstr "Esempio: un link diretto all'immagine del vostro logo (PNG, JPG, SVG)."
 
-#: plugin.php:150 plugin.php:158
-msgid "Reset to Default"
-msgstr "Ripristina impostazioni predefinite"
-
-#: plugin.php:150
-msgid "Restores original YOURLS logo and title, removing all customizations."
-msgstr "Ripristina il logo e il titolo originali di YOURLS, rimuovendo tutte le personalizzazioni."
-
-#: plugin.php:158
-msgid "Are you sure you want to reset all settings?"
-msgstr "Sei sicuro di voler ripristinare tutte le impostazioni?"
-
-#: plugin.php:251 plugin.php:271
-msgid "New version available:"
-msgstr "Nuova versione disponibile:"
-
-#: plugin.php:252 plugin.php:272
-msgid "View details on GitHub"
-msgstr "Visualizza dettagli su GitHub"
-
-#: plugin.php:293
-msgid "Update Available"
-msgstr "Aggiornamento disponibile"
-
-#: plugin.php:183
+#: inc/admin-page.php
 msgid "Upload image"
 msgstr "Carica immagine"
 
-#: plugin.php:184
+#: inc/admin-page.php
 msgid "Optional: upload PNG, JPG, GIF or WEBP from your computer (max 5 MB)."
 msgstr "Opzionale: carica PNG, JPG, GIF o WEBP dal computer (max 5 MB)."
 
-#: plugin.php:186
+#: inc/admin-page.php
 msgid "After selecting a file, click \"Save Settings\" to complete logo upload."
 msgstr "Dopo aver selezionato un file, fai clic su \"Salva impostazioni\" per completare l'upload del logo."
 
-#: plugin.php:268
-msgid "Logo image uploaded successfully. URL updated automatically."
-msgstr "Immagine del logo caricata correttamente. URL aggiornato automaticamente."
+#: inc/admin-page.php
+msgid "ALT Tag"
+msgstr "Tag ALT"
 
-#: plugin.php:297 plugin.php:301
-msgid "Upload failed: no valid file received."
-msgstr "Caricamento fallito: nessun file valido ricevuto."
+#: inc/admin-page.php
+msgid "Example: descriptive text for accessibility."
+msgstr "Esempio: testo descrittivo per l'accessibilità."
 
-#: plugin.php:306
-msgid "Upload failed: file is too large (max 5 MB)."
-msgstr "Caricamento fallito: file troppo grande (max 5 MB)."
+#: inc/admin-page.php
+msgid "My Custom Logo"
+msgstr "Il mio logo personalizzato"
 
-#: plugin.php:311 plugin.php:323
-msgid "Upload failed: unsupported image format. Allowed: PNG, JPG, GIF, WEBP."
-msgstr "Caricamento fallito: formato immagine non supportato. Consentiti: PNG, JPG, GIF, WEBP."
+#: inc/admin-page.php
+msgid "Title Attribute"
+msgstr "Attributo Title"
 
-#: plugin.php:328
-msgid "Upload failed: could not create upload directory."
-msgstr "Caricamento fallito: impossibile creare la cartella di upload."
+#: inc/admin-page.php
+msgid "Example: tooltip text shown on hover."
+msgstr "Esempio: testo mostrato al passaggio del mouse."
 
-#: plugin.php:332
-msgid "Upload failed: upload directory is not writable."
-msgstr "Caricamento fallito: la cartella di upload non è scrivibile."
+#: inc/admin-page.php
+msgid "Back to Dashboard"
+msgstr "Torna al pannello"
 
-#: plugin.php:339
-msgid "Upload failed while moving the file to destination."
-msgstr "Caricamento fallito durante lo spostamento del file nella destinazione."
+#: inc/admin-page.php
+msgid "Logo Preview"
+msgstr "Anteprima logo"
 
-#: plugin.php:204
+#: inc/admin-page.php
+msgid "Unable to load the image. Please check the URL."
+msgstr "Impossibile caricare l'immagine. Controllare l'URL."
+
+#: inc/admin-page.php
 msgid "Width (px)"
 msgstr "Larghezza (px)"
 
-#: plugin.php:208
+#: inc/admin-page.php
 msgid "Height (px)"
 msgstr "Altezza (px)"
 
-#: plugin.php:212
+#: inc/admin-page.php
 msgid "Keep aspect ratio"
 msgstr "Mantieni rapporto proporzioni"
 
-#: plugin.php:213
+#: inc/admin-page.php
 msgid "Tip: set one side only and keep aspect ratio enabled for proportional resize."
 msgstr "Suggerimento: imposta un solo lato e lascia attivo il rapporto proporzioni per un ridimensionamento proporzionale."
+
+#: inc/admin-page.php
+msgid "Notes"
+msgstr "Note"
+
+#: inc/admin-page.php
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+#: inc/admin-page.php
+msgid "Saves the changes you made to logo and title."
+msgstr "Salva le modifiche apportate al logo e al titolo."
+
+#: inc/admin-page.php
+msgid "Reset to Default"
+msgstr "Ripristina impostazioni predefinite"
+
+#: inc/admin-page.php
+msgid "Restores original YOURLS logo and title, removing all customizations."
+msgstr "Ripristina il logo e il titolo originali di YOURLS, rimuovendo tutte le personalizzazioni."
+
+#: inc/admin-page.php
+msgid "Are you sure you want to reset all settings?"
+msgstr "Sei sicuro di voler ripristinare tutte le impostazioni?"
+
+#: inc/admin-page.php
+msgid "Logo image uploaded successfully. URL updated automatically."
+msgstr "Immagine del logo caricata correttamente. URL aggiornato automaticamente."
+
+#: inc/update-check.php
+msgid "New version available:"
+msgstr "Nuova versione disponibile:"
+
+#: inc/update-check.php
+msgid "View details on GitHub"
+msgstr "Visualizza dettagli su GitHub"
+
+#: inc/update-check.php
+msgid "Update Available"
+msgstr "Aggiornamento disponibile"
+
+#: inc/helpers.php
+msgid "Upload failed: no valid file received."
+msgstr "Caricamento fallito: nessun file valido ricevuto."
+
+#: inc/helpers.php
+msgid "Upload failed: file is too large (max 5 MB)."
+msgstr "Caricamento fallito: file troppo grande (max 5 MB)."
+
+#: inc/helpers.php
+msgid "Upload failed: unsupported image format. Allowed: PNG, JPG, GIF, WEBP."
+msgstr "Caricamento fallito: formato immagine non supportato. Consentiti: PNG, JPG, GIF, WEBP."
+
+#: inc/helpers.php
+msgid "Upload failed: could not create upload directory."
+msgstr "Caricamento fallito: impossibile creare la cartella di upload."
+
+#: inc/helpers.php
+msgid "Upload failed: upload directory is not writable."
+msgstr "Caricamento fallito: la cartella di upload non è scrivibile."
+
+#: inc/helpers.php
+msgid "Upload failed while moving the file to destination."
+msgstr "Caricamento fallito durante lo spostamento del file nella destinazione."
