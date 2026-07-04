@@ -4,6 +4,7 @@ Customize YOURLS branding from a single admin page: logo, title, and display beh
 
 [![Latest Release](https://img.shields.io/github/v/release/gioxx/YOURLS-LogoSuite)](https://github.com/gioxx/YOURLS-LogoSuite/releases)
 [![License](https://img.shields.io/github/license/gioxx/YOURLS-LogoSuite)](LICENSE)
+[![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome)
 
 ## 🚀 Features
 
