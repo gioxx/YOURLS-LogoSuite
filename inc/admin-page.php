@@ -173,7 +173,7 @@ function logo_suite_config_page() {
     echo '<div class="logo-suite-footer">';
     echo '<div class="plugin-footer-top">';
     echo '<div>';
-    echo '<a href="https://yourls.gioxx.org/plugins/logo-suite" target="_blank" rel="noopener noreferrer">&#127912; YOURLS Logo Suite</a>';
+    echo '<a href="https://yourls.gxware.org/plugins/logo-suite" target="_blank" rel="noopener noreferrer">&#127912; YOURLS Logo Suite</a>';
     echo ' &nbsp;&middot;&nbsp; ';
     echo '<img src="https://github.githubassets.com/favicons/favicon.png" class="github-icon" alt="">';
     echo '<a href="https://github.com/gioxx/YOURLS-LogoSuite" target="_blank" rel="noopener noreferrer">GitHub</a>';
